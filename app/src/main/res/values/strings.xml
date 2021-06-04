@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RuntasticApp</string>
+    <string name="google_maps_key">AIzaSyBOOsClr0M1p6I5gbQMaTkeKB8AivkOL8s</string>
 </resources>
