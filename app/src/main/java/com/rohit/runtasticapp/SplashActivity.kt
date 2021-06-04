@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 
 class SplashActivity : AppCompatActivity() {
     companion object{
-        const val timeInMillies = 2000L
+        const val timeInMillies = 3000L
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
