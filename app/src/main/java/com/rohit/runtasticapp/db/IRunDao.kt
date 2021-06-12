@@ -13,26 +13,27 @@ interface IRunDao {
     suspend fun deleteRun(run:Run)
 
     @Query("SELECT * from running_table ORDER By timeStamp DESC")
-    suspend fun getAllRunsSortedByDate(): LiveData<List<Run>>
+     fun getAllRunsSortedByDate(): LiveData<List<Run>>
 
     @Query("SELECT * from running_table ORDER By caloriesBurned DESC")
-    suspend fun getAllRunsSortedByCaloriesBurned(): LiveData<List<Run>>
+     fun getAllRunsSortedByCaloriesBurned(): LiveData<List<Run>>
 
     @Query("SELECT * from running_table ORDER By avgSpeedInKMH DESC")
-    suspend fun getAllRunsSortedByAvgSpeed(): LiveData<List<Run>>
+     fun getAllRunsSortedByAvgSpeed(): LiveData<List<Run>>
 
     @Query("SELECT * from running_table ORDER By distanceInMetres DESC")
-    suspend fun getAllRunsSortedByDistance(): LiveData<List<Run>>
+     fun getAllRunsSortedByDistance(): LiveData<List<Run>>
 
     @Query("SELECT SUM(timeInMillies) FROM running_table")
-    suspend fun getTotalTimeInMillies():LiveData<Long>
+     fun getTotalTimeInMillies():LiveData<Long>
 
     @Query("SELECT SUM(caloriesBurned) FROM running_table")
-    suspend fun getTotalCaloriesBurned():LiveData<Int>
+     fun getTotalCaloriesBurned():LiveData<Int>
 
     @Query("SELECT SUM(distanceInMetres) FROM running_table")
-    suspend fun getTotalDistance():LiveData<Long>
+     fun getTotalDistance():LiveData<Long>
 
     @Query("SELECT SUM(timeInMillies) FROM running_table")
-    suspend fun getTotalAvgSpeed():LiveData<Float>
+     fun getTotalAvgSpeed():LiveData<Float>
+
 }

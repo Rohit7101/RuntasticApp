@@ -3,6 +3,7 @@ package com.rohit.runtasticapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.rohit.runtasticapp.ui.HomeActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -27,7 +28,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun moveToHomeScreen() {
-        startActivity(Intent(this,HomeActivity::class.java))
+        startActivity(Intent(this, HomeActivity::class.java))
         finish()
     }
 
