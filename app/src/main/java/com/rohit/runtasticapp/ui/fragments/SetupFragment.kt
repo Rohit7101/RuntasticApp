@@ -12,7 +12,6 @@ import com.rohit.runtasticapp.ui.viewModels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_setup.*
 
-
 @AndroidEntryPoint
 class SetupFragment : Fragment(R.layout.fragment_setup) {
     private val viewmodel: MainViewModel by viewModels()
@@ -25,9 +24,9 @@ class SetupFragment : Fragment(R.layout.fragment_setup) {
     private fun setUpClickListener(){
 
         tvContinue.setOnClickListener {
-            if(checkValidation()) {
-                findNavController().navigate(R.id.action_setupFragment_to_runFragment2)
-            }
+           // if(checkValidation()) {
+                findNavController().navigate(R.id.action_setupFragment_to_runFragment)
+            //}
         }
     }
 

@@ -11,11 +11,11 @@
         android:label="fragment_setup"
         tools:layout="@layout/fragment_setup" >
         <action
-            android:id="@+id/action_setupFragment_to_runFragment2"
-            app:destination="@id/runFragment2" />
+            android:id="@+id/action_setupFragment_to_runFragment"
+            app:destination="@id/runFragment" />
     </fragment>
     <fragment
-        android:id="@+id/runFragment2"
+        android:id="@+id/runFragment"
         android:name="com.rohit.runtasticapp.ui.fragments.RunFragment"
         android:label="fragment_run"
         tools:layout="@layout/fragment_run" >
@@ -29,7 +29,16 @@
         android:label="fragment_tracking"
         tools:layout="@layout/fragment_tracking" >
         <action
-            android:id="@+id/action_trackingFragment_to_runFragment2"
-            app:destination="@id/runFragment2" />
+            android:id="@+id/action_trackingFragment_to_runFragment"
+            app:destination="@id/runFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.rohit.runtasticapp.ui.fragments.StatisticsFragment"
+        android:label="fragment_statistics"
+        tools:layout="@layout/fragment_statistics" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.rohit.runtasticapp.ui.fragments.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

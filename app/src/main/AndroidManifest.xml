@@ -18,8 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RuntasticApp"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.HomeActivity"></activity>
-        <activity android:name=".SplashActivity">
+      <!--  <activity
+            android:name=".ui.HomeActivity"
+            android:launchMode="singleTask" />
+-->
+        <activity android:name=".ui.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

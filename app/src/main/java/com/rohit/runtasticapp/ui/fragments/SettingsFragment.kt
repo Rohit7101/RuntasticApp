@@ -12,8 +12,11 @@ import com.rohit.runtasticapp.ui.viewModels.StatisticsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
-@AndroidEntryPoint
 class SettingsFragment : Fragment(R.layout.fragment_settings_fagment) {
 
     private val viewmodel: MainViewModel by viewModels()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
 }
