@@ -5,6 +5,10 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/setupFragment">
 
+    <action android:id="@+id/action_global_tracking_fragment"
+        app:launchSingleTop="true"
+        app:destination="@+id/trackingFragment"/>
+
     <fragment
         android:id="@+id/setupFragment"
         android:name="com.rohit.runtasticapp.ui.fragments.SetupFragment"
