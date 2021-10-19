@@ -4,7 +4,7 @@ import com.rohit.runtasticapp.db.IRunDao
 import com.rohit.runtasticapp.db.Run
 import javax.inject.Inject
 
-class MainRepository @Inject constructor(val runDao: IRunDao) {
+class MainRepository @Inject constructor(private val runDao: IRunDao) {
 
     suspend fun inserRun(run:Run) = runDao.insertRun(run)
     suspend fun deleteRun(run:Run) = runDao.deleteRun(run)

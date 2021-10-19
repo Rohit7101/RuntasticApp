@@ -24,9 +24,9 @@ class SetupFragment : Fragment(R.layout.fragment_setup) {
     private fun setUpClickListener(){
 
         tvContinue.setOnClickListener {
-           // if(checkValidation()) {
+            if(checkValidation()) {
                 findNavController().navigate(R.id.action_setupFragment_to_runFragment)
-            //}
+            }
         }
     }
 

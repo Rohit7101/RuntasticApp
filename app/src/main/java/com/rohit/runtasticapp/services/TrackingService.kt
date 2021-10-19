@@ -51,6 +51,11 @@ class TrackingService : LifecycleService(){
         pathPoints.value = mutableListOf()
     }
 
+    private fun pauseService(){
+    isTracking.postValue(false)
+    }
+
+
     override fun onCreate() {
         super.onCreate()
         postInitialValues()
@@ -120,14 +125,17 @@ class TrackingService : LifecycleService(){
                         isFirstRun = false
                     }else{
                         Timber.d("resume service")
+                        startForegroundService()
 
                     }
                 }
                 ACTION_STOP_SERVICE ->{
                     Timber.d("Stop service")
+
                 }
                 ACTION_PAUSE_SERVICE ->{
                     Timber.d("pause service")
+                    pauseService()
                 }
             }
         }

@@ -28,5 +28,4 @@ object AppModule {
     @Provides
     fun providesRunDao(db:RunningDatabase) =
          db.getRunDao()
-    
 }
