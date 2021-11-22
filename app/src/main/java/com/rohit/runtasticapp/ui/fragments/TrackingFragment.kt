@@ -19,6 +19,7 @@ import com.rohit.runtasticapp.utils.Constants.ACTION_START_OR_RESUME_SERVICE
 import com.rohit.runtasticapp.utils.Constants.MAP_ZOOM
 import com.rohit.runtasticapp.utils.Constants.POLYLINE_COLOR
 import com.rohit.runtasticapp.utils.Constants.POLYLINE_WIDTH
+import com.rohit.runtasticapp.utils.TrackingUtility
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_tracking.*
 import timber.log.Timber
@@ -30,6 +31,7 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
     private var map: GoogleMap? = null
     private var isTracking = false
     private var pathPoints = mutableListOf<MutableList<LatLng>>()
+    private var curTImeInMillies = 0L
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -47,6 +49,12 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
             pathPoints = it
             addLatestPolylines()
             moveCameraToUser()
+        })
+
+        TrackingService.timeRunInMilliseconds.observe(viewLifecycleOwner, Observer {
+            curTImeInMillies = it
+            val formattedTime = TrackingUtility.getFormattedStopwatchTime(curTImeInMillies,true)
+            tvTimer.text = formattedTime
         })
     }
 
