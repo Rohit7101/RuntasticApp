@@ -24,6 +24,11 @@ interface IRunDao {
     @Query("SELECT * from running_table ORDER By distanceInMetres DESC")
      fun getAllRunsSortedByDistance(): LiveData<List<Run>>
 
+
+    @Query("SELECT * from running_table ORDER By timeInMillies DESC")
+    fun getAllRunsSortedByTimeInMillies(): LiveData<List<Run>>
+
+
     @Query("SELECT SUM(timeInMillies) FROM running_table")
      fun getTotalTimeInMillies():LiveData<Long>
 
