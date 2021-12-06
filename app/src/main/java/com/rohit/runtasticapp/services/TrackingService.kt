@@ -193,6 +193,7 @@ class TrackingService : LifecycleService(){
         }
     }
 
+
     private fun addEmptyPolyline() = pathPoints.value?.apply {
         add(mutableListOf())
         pathPoints.postValue(this)

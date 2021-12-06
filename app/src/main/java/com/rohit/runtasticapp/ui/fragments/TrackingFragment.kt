@@ -32,6 +32,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_tracking.*
 import timber.log.Timber
 import java.util.*
+import javax.inject.Inject
 import kotlin.math.round
 
 @AndroidEntryPoint
@@ -43,6 +44,8 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
     private var pathPoints = mutableListOf<MutableList<LatLng>>()
     private var curTImeInMillies = 0L
     private var menu: Menu?= null
+
+    @set:Inject
     private var weight = 75f
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -123,6 +126,7 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
     }
 
     private fun stopRun() {
+        tvTimer.text = "00:00:00:00"
         sendCommandToService(ACTION_STOP_SERVICE)
         findNavController().navigate(R.id.action_trackingFragment_to_runFragment)
     }
@@ -130,10 +134,10 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
     private fun updateTracking(isTracking:Boolean){
         Timber.d("observing tracking   "+isTracking)
         this.isTracking = isTracking
-        if(!isTracking){
+        if(!isTracking && curTImeInMillies>0L){
             btnToggleRun.text = "Start"
             btnFinishRun.visibility = View.VISIBLE
-        }else{
+        }else if(isTracking){
             menu?.getItem(0)?.isVisible = true
             btnToggleRun.text = "Stop"
             btnFinishRun.visibility = View.GONE
